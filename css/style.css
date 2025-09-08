@@ -174,7 +174,7 @@ form input {
   border-radius: 50px;
   border: 5px solid black;
   overflow: hidden;
-  height: 160px;       /* altura fija */
+  height: 160px;
   width: 100%;
   display: flex;
   align-items: center;
@@ -182,33 +182,24 @@ form input {
 
 }
 
-.text-container {
-  position: relative;
-  font-size: 2.8em;
-  color: black;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  display: flex;
-  text-decoration: none;
-  z-index: 2;
-}
+
 
 .video-background {
-  max-width: 100%;     /* el video nunca se sale del contenedor */
-  max-height: 100%;    /* mantiene el tamaño dentro de 160px */
-  object-fit: contain; /* muestra todo el video, sin recortar */
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
   display: block;
 
 }
 
+/* no me salio esto */
+
 .vidhistoria {
   position: absolute;
-  top: 120px;      /* mueve verticalmente */
-  left: 130px;     /* mueve horizontalmente */
-  width: auto;     /* deja que el video mantenga proporción */
-  height: 200%;    /* más grande que el container para que puedas moverlo */
+  top: 120px;
+  left: 130px;
+  width: auto;
+  height: 200%;
   object-fit: cover;
 
 }
