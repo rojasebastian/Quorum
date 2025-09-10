@@ -47,3 +47,36 @@
   background-color: transparent;
   white-space: nowrap;
 }
+
+.texto-titulo-astro {
+  font-size: 3.5em;
+  text-align: left;
+  color: white;
+  z-index: 2;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+  background-color: transparent;
+  white-space: nowrap;
+  padding-left: 4rem;
+}
+
+.texto-parrafo-astro {
+  font-size: 2em;
+  text-align: left;
+  color: white;
+  z-index: 2;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+  background-color: transparent;
+  white-space: normal;
+  padding-left: 4rem;
+  margin-right: 10rem;
+  margin-bottom: 1.5rem;
+
+}
+
+.boton-flecha i {
+  margin-left: 8px;
+  font-size: 1.2em;
+}
+
