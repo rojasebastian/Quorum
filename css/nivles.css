@@ -75,8 +75,109 @@
 
 }
 
-.boton-flecha i {
-  margin-left: 8px;
-  font-size: 1.2em;
+
+.resaltado {
+  color: white;
+  font-weight: bold;
+  padding: 0 2px;
+  border-radius: 2px;
 }
+
+/* FLECHAS */
+
+.boton-flecha {
+  display: inline-flex;       /* para alinear icono y texto horizontalmente */
+  align-items: center;        /* centra verticalmente */
+  gap: 10px;                  /* espacio entre texto e icono */
+  text-decoration: none;
+  color: aqua;
+  font-size: 3em;
+  transition: transform 0.3s ease;
+}
+
+
+.boton-flecha i {
+
+  animation: parpadeo 1s infinite;
+}
+
+
+@keyframes parpadeo {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.contenedor-flecha1 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+.contenedor-flecha {
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+
+.contenedor-principal {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+/* QUIZ */
+
+#quiz-container {
+  position: relative;
+  background-color: black;
+  color: white;
+  padding: 80px;
+  border-radius: 30px;
+  max-width: 80%;
+  margin: 20px 0 20px 0;
+  font-family: Arial, sans-serif;
+  border: 5px solid white;
+}
+
+#opciones button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 2em;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: inherit;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+#opciones button:hover {
+  background-color: #2980b9;
+}
+
+#resultado {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
 
