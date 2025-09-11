@@ -1,0 +1,26 @@
+.cuadrado-blanco {
+    background-color: white;
+    border-radius: 30px;
+    padding: 20px;
+    z-index: 4;
+    margin-top: 2rem;
+    position: relative;
+    border: 3px solid black;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-right: 20rem;
+    margin-left: 5rem;
+}
+
+.buscador-input-2 {
+
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 250px;
+  padding: 5px 10px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+
+}
