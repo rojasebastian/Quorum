@@ -1,0 +1,37 @@
+.curiosidades {
+  border: 2px solid black;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.curiosidades h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+
+.curiosidades .contenido {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  flex-wrap: wrap;  /* en pantallas pequeñas, la imagen baja debajo */
+}
+
+.curiosidades p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  flex: 1;          /* hace que el párrafo ocupe el espacio restante */
+}
+
+.curiosidades .imagen-curiosidad {
+  width: 150px;     /* tamaño de la imagen */
+  height: auto;
+  border-radius: 5px;
+  order: 2;         /* asegura que la imagen quede a la derecha */
+}
