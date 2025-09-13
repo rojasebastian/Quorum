@@ -7,7 +7,22 @@ document.addEventListener("mousemove", (e) => {
   video.style.transform = `translate(calc(-50% + ${x}px), calc(-50% + ${y}px)) scale(1.05)`;
 });
 
+//funcion para el buscador
 
+function buscar() {
+  const valor = document.getElementById("busqueda").value.toLowerCase();
+
+  if (valor === "astronomia") {
+    window.location.href = "astronomia.html";
+  } else if (valor === "fisica") {
+    window.location.href = "fisica.html";
+  } else {
+    alert("No se encontró la página para: " + valor);
+  }
+}
+
+
+//fue un intento de hacer un quiz mas simple pero no funciono
 /*
 const botones = document.querySelectorAll(".opcion");
 
@@ -26,8 +41,6 @@ botones.forEach(boton => {
     }
   });
 });
-
-
 
 */
 
@@ -115,9 +128,13 @@ function comprobarRespuesta(boton) {
     if (indicePregunta < preguntas.length) {
       setTimeout(() => mostrarPregunta(), 1000);
     } else {
-      resultadoEl.textContent = "¡Has completado el quiz! 🎉";
+      resultadoEl.textContent = "¡Has completado el quiz!!!!!";
       // habilitar botón de avanzar
-      botonSiguiente.classList.add("enabled");
+      botonSiguiente.style.pointerEvents = "auto";
+      botonSiguiente.style.opacity = "1";
+
+      document.querySelector(".contenedor-nivel1").style.color = "lime";
+
     }
 
   } else {
@@ -126,6 +143,6 @@ function comprobarRespuesta(boton) {
   }
 }
 
-// Mostrar la primera pregunta al cargar
+
 mostrarPregunta();
 

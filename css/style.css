@@ -124,6 +124,17 @@ nav.menu a:hover {
   transform: scale(1.05);
 }
 
+
+input {
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: 5px solid black;
+  margin-left: 4rem;
+  width: 40rem;
+
+}
+
+
 form input {
   padding: 12px 20px;
   border-radius: 15px;
