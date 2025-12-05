@@ -1,0 +1,632 @@
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  padding: 0;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+#root {
+  min-height: 100vh;
+  width: 100%;
+  padding: 0;
+  /* Estas líneas son de tu CSS original y
+     ayudan a que el footer se pegue abajo */
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+#bg-video-p {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120vw;
+  height: 120vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+#bg-video-m {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+
+.content-p {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  z-index: 1;
+}
+
+.content-p h1 {
+  margin: 0;
+  padding: 0;
+  position: static;
+  z-index: 1;
+}
+
+.inicio a{
+  text-decoration: none;
+  color: inherit;
+}
+
+.content-p h1 a {
+  color: rgba(6, 244, 213, 0.66);
+  text-decoration: none;
+  font-size: 14vw;
+  font-family: "Akronim", system-ui;
+  padding: 0;
+  display: inline-block;
+}
+
+.buscador {
+  color: black;
+  position: relative;
+  font-size: 3em;
+  top: 20px;
+  left: 70px;
+  width: 40rem;
+  height: auto;
+  z-index: 2;
+  white-space: nowrap;
+
+}
+
+
+footer {
+  margin-top: auto;
+  background: black;
+  color: #fff;
+  text-align: center;
+  padding:0;
+  font-size: 0.9em;
+}
+
+
+/*
+  navegacion
+*/
+
+
+html, body {
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+header {
+  background-color: black;
+  padding: 15px 30px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header h1 {
+  color: #00bfff;
+  margin: 0;
+}
+
+nav.menu a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  padding: 8px 15px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+  margin-left: 10px;
+}
+
+nav.menu a:hover {
+  background-color: #ff7f50;
+  color: #fff;
+  transform: scale(1.05);
+}
+
+
+input {
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: 5px solid black;
+  margin-left: 4rem;
+  width: 40rem;
+
+}
+
+
+form input {
+  padding: 12px 20px;
+  border-radius: 15px;
+  border: 5px solid black;
+  margin-left: 4rem;
+  width: 40rem;
+
+}
+
+.buscador-input {
+  width: 40rem;
+  font-size: 1em;
+  padding: 12px 20px;
+  color: #000;
+}
+
+
+/*
+  css de aprendizaje
+*/
+
+.box-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  margin-top: 50px;
+  margin-bottom: 60px;
+}
+.box-container > * {
+  flex: 0 1 48%;
+  max-width: 48%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background: #fff;
+  overflow: auto;
+  min-height: 80px;
+  padding: 5px;
+
+}
+
+.container {
+  position: relative;
+  margin: 10px;
+  padding: 0;
+  background-color: white;
+  border-radius: 50px;
+  border: 5px solid black;
+  overflow: hidden;
+  height: 160px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+.video-background {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+
+}
+
+/* no me salio esto */
+
+.vidhistoria {
+  position: absolute;
+  top: 120px;
+  left: 130px;
+  width: auto;
+  height: 200%;
+  object-fit: cover;
+
+}
+
+
+.overlay-text {
+  position: absolute;
+  top: 25%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2.8em;
+  z-index: 2;
+  text-align: center;
+}
+
+
+
+/* CSS PARA APARTADO CUENTA */
+
+/* Estilos para la página de cuenta */
+.cuadrado-blanco {
+  background-color: white;
+  border-radius: 30px;
+  padding: 20px;
+  z-index: 4;
+  margin-top: 2rem;
+  position: relative;
+  border: 3px solid black;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-right: 20rem;
+  margin-left: 5rem;
+
+}
+
+/* Estilos para el formulario */
+.buscador-input-2 {
+
+  border-radius: 10px;
+  border: 1px solid black;
+  width: 250px;
+  padding: 5px 10px;
+  margin-bottom: 1px;
+}
+
+/* Estilos para los botones */
+form label {
+  display: block;
+  margin-bottom: 5px;
+
+}
+
+.error-msg {
+  color: red;
+  font-size: 0.9em;
+  display: none;
+  margin-top: 2px;
+}
+
+
+/* CSS PARA APARTADO CURIOSIDADES */
+
+.curiosidades-titulo {
+  color: black;
+}
+
+
+.curiosidades {
+  border: 2px solid black;
+  padding: 20px;
+  background-color: #f9f9f9;
+  max-width: 700px;
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+}
+
+.curiosidades h1 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  border-bottom: 2px solid #000;
+  padding-bottom: 5px;
+}
+
+.curiosidades .contenido {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  flex-wrap: wrap;  /* en pantallas pequeñas, la imagen baja debajo */
+}
+
+.curiosidades p {
+  margin: 0;
+  line-height: 1.6;
+  color: #333;
+  flex: 1;          /* hace que el párrafo ocupe el espacio restante */
+}
+
+.curiosidades .imagen-curiosidad {
+  width: 150px;     /* tamaño de la imagen */
+  height: auto;
+  border-radius: 5px;
+  order: 2;         /* asegura que la imagen quede a la derecha */
+}
+
+
+
+
+/* CSS PARA APARTADO NIVELES */
+
+
+.box-container-astro {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px;
+  padding: 20px;
+  margin-top: 20px;
+  margin-bottom: 60px;
+}
+.box-container-astro > * {
+  flex: 0 1 48%;
+  max-width: 48%;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  background: #fff;
+  overflow: auto;
+  min-height: 80px;
+  padding: 5px;
+
+}
+
+
+.container-astro {
+  position: relative;
+  margin: 10px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 50px;
+  border: 5px solid black;
+  overflow: hidden;
+  height: 150px;
+  width: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.contenedor-nivel1 {
+  position: relative;
+  margin: 10px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 50px;
+  border: 5px solid black;
+  overflow: hidden;
+  height: 150px;
+  width: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.texto-astro {
+  font-size: 5em;
+  text-align: center;
+  color: white;
+  z-index: 2;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  background-color: transparent;
+  white-space: nowrap;
+}
+
+.texto-titulo-astro {
+  font-size: 3.5em;
+  text-align: left;
+  color: white;
+  z-index: 2;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+  background-color: transparent;
+  white-space: nowrap;
+  padding-left: 4rem;
+}
+
+.texto-parrafo-astro {
+  font-size: 2em;
+  text-align: left;
+  color: white;
+  z-index: 2;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-weight: bold;
+  background-color: transparent;
+  white-space: normal;
+  padding-left: 4rem;
+  margin-right: 10rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 50px;
+
+}
+
+
+.resaltado {
+  color: white;
+  font-weight: bold;
+  padding: 0 2px;
+  border-radius: 2px;
+}
+
+/* FLECHAS */
+
+.boton-flecha {
+  display: inline-flex;       /* para alinear icono y texto horizontalmente */
+  align-items: center;        /* centra verticalmente */
+  gap: 10px;                  /* espacio entre texto e icono */
+  text-decoration: none;
+  color: aqua;
+  font-size: 3em;
+  transition: transform 0.3s ease;
+
+  z-index: 10;
+}
+
+
+.boton-flecha i {
+
+  animation: parpadeo 1s infinite;
+}
+
+
+@keyframes parpadeo {
+  0%   { opacity: 1; }
+  50%  { opacity: 0.3; }
+  100% { opacity: 1; }
+}
+
+.contenedor-flecha1 {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+
+
+
+
+
+.contenedor-flecha {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  z-index: 3;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+
+}
+
+
+.contenedor-principal {
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+
+/* QUIZ */
+
+#quiz-container {
+  position: relative;
+  background-color: black;
+  color: white;
+  padding: 80px;
+  border-radius: 30px;
+  max-width: 80%;
+  margin: 20px 0 20px 0;
+  font-family: Arial, sans-serif;
+  border: 5px solid white;
+}
+
+#opciones button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  font-size: 2em;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  background-color: inherit;
+  color: white;
+  transition: background-color 0.3s;
+}
+
+#opciones button:hover {
+  background-color: #2980b9;
+}
+
+#resultado {
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+
+
+
+
+
+
+.mi-boton-volver {
+  position: relative;
+  z-index: 2;
+
+  /* Estilos para que parezca un botón */
+  display: inline-block; /* Para que respete el 'margin' */
+  padding: 10px 20px;
+  margin: 20px;
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-family: Arial, sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mi-boton-volver:hover {
+  background-color: #333; /* Un gris oscuro al pasar el mouse */
+}
