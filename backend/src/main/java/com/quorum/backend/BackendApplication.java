@@ -22,7 +22,7 @@ public class BackendApplication {
             repository.save(new Curiosidades(
                 "El Sol es ruidoso",
                 "Si el espacio tuviera aire, escucharíamos al Sol como un tren constante a 100dB.",
-                "https://images.unsplash.com/photo-1532049880577-49e0c60965ee"
+                "https://content.nationalgeographic.com.es/medio/2022/08/07/el-sol_e26b22b0_1200x720.jpg"
             ));
             repository.save(new Curiosidades(
                 "Los pulpos tienen 3 corazones",

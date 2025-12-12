@@ -56,7 +56,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    background-color: transparent; /* <--- AHORA SÍ SE VERÁ EL VIDEO */
   }
   a:hover {
     color: #747bff;
@@ -137,13 +137,11 @@ button:focus-visible {
   color: black;
   position: relative;
   font-size: 3em;
-  top: 20px;
-  left: 70px;
+  left: 20px;
   width: 40rem;
   height: auto;
   z-index: 2;
   white-space: nowrap;
-
 }
 
 
@@ -205,8 +203,6 @@ input {
   padding: 12px 20px;
   border-radius: 15px;
   border: 5px solid black;
-  margin-left: 4rem;
-  width: 40rem;
 
 }
 
@@ -215,8 +211,6 @@ form input {
   padding: 12px 20px;
   border-radius: 15px;
   border: 5px solid black;
-  margin-left: 4rem;
-  width: 40rem;
 
 }
 
@@ -323,13 +317,19 @@ form input {
 }
 
 /* Estilos para el formulario */
+/* Estilos corregidos para los inputs del Login */
 .buscador-input-2 {
+  display: block;        /* Para que queden uno debajo del otro */
+  width: 100%;           /* Que ocupen el ancho de la tarjeta, no 40rem */
+  max-width: 300px;      /* Un tope para que no se vean gigantes */
 
+  margin-left: 0 !important; /* <--- ¡IMPORTANTE! Esto anula el margen de 4rem */
+  margin-bottom: 15px;   /* Espacio entre usuario y contraseña */
+  left: 20px;
+  padding: 10px;
   border-radius: 10px;
   border: 1px solid black;
-  width: 250px;
-  padding: 5px 10px;
-  margin-bottom: 1px;
+  box-sizing: border-box; /* Para que el padding no deforme el tamaño */
 }
 
 /* Estilos para los botones */
@@ -629,4 +629,14 @@ form label {
 
 .mi-boton-volver:hover {
   background-color: #333; /* Un gris oscuro al pasar el mouse */
+}
+
+#bg-video-main {
+  position: fixed; /* Se queda fijo en la pantalla */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cubre toda la pantalla */
+  z-index: -1; /* ¡Importante! Lo manda al fondo detrás del texto */
 }

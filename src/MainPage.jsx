@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react'; // <--- ¡AQUÍ ESTABA EL ERROR!
 import { Link, useNavigate } from 'react-router-dom';
 
 function Main() {
 
   const navigate = useNavigate();
   const [searchTerm, setSearchTerm] = useState('');
+  const videoRef = useRef(null); // Ahora sí funcionará porque lo importamos arriba
 
-  // 3. MODIFICA LA LÓGICA DE BÚSQUEDA
+  // 3. LÓGICA DE BÚSQUEDA
   const handleBuscar = () => {
     // Normalizamos el input: minúsculas y sin espacios extra
     const valor = searchTerm.toLowerCase().trim();
@@ -18,18 +19,29 @@ function Main() {
       alert("Esa sección aún no ha sido migrada.");
 
     } else {
-      alert("No se encontró la página para:" + valor);
+      alert("No se encontró la página para: " + valor);
     }
 
-    // Opcional: Limpia la barra de búsqueda después de buscar
+    // Limpia la barra de búsqueda después de buscar
     setSearchTerm('');
   };
 
   return (
     <>
+      {/* --- Video de fondo --- */}
+      <video
+        ref={videoRef}
+        autoPlay
+        muted
+        loop
+        id="bg-video-main"
+      >
+        <source src="/blanco-fondo.mp4" type="video/mp4" />
+      </video>
 
-      {/* Enlace para volver al inicio (App.jsx) */}
-      {/* Reemplaza el <Link> del ícono por este: */}
+      {/* --- CONTENIDO --- */}
+
+      {/* Enlace para volver al inicio */}
       <Link to="/" className="mi-boton-volver">
         Volver
       </Link>
@@ -37,10 +49,7 @@ function Main() {
       <div>
         <h2 className="buscador">Busca tema de tu interés</h2>
 
-        {/* PASO 5: Conectamos el input al 'estado' de React
-          value={searchTerm} -> Muestra el valor del estado.
-          onChange={...} -> Actualiza el estado cada vez que escribes.
-        */}
+        {/* Input conectado al estado */}
         <input
           type="text"
           className="buscador-input"
@@ -48,7 +57,6 @@ function Main() {
           placeholder="Buscar..."
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
-
           onKeyDown={(e) => {
             if (e.key === 'Enter') {
               handleBuscar();
@@ -56,9 +64,7 @@ function Main() {
           }}
         />
 
-        {/* PASO 6: Conectamos el botón a la función de React
-          onclick="buscar()" -> onClick={handleBuscar}
-        */}
+        {/* Botón de búsqueda */}
         <button
           type="button"
           onClick={handleBuscar}

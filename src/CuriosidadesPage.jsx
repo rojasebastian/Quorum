@@ -3,25 +3,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 
 function CuriosidadesPage() {
-  // 1. Estado para guardar la lista que viene de Java
   const [listaCuriosidades, setListaCuriosidades] = useState([]);
   const [error, setError] = useState(null);
 
-  // 2. useEffect: Se ejecuta una vez cuando la página carga
   useEffect(() => {
-    // INTENTO RECUPERAR EL TOKEN DEL LOGIN
     const tokenGuardado = localStorage.getItem('token');
 
-    // Si no hay token, quizás redirigir al login o no hacer nada
     if (!tokenGuardado) {
       setError("No estás logueado. Por favor inicia sesión.");
       return;
     }
+
     fetch('http://localhost:8080/api/curiosidades', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
-        //Usamos Bearer token en vez de Basic
         'Authorization': `Bearer ${tokenGuardado}`
       }
     })
@@ -38,38 +34,47 @@ function CuriosidadesPage() {
         console.error(err);
         setError("Error cargando datos. Revisa si tu sesión expiró.");
       });
-  }, []);// El array vacío asegura que se ejecute solo una vez
+  }, []);
 
   return (
     <>
-      <div className="container mt-5">
-          <h2 className="text-center mb-4">Curiosidades desde el Backend</h2>
-
-          {error && <div className="alert alert-danger">{error}</div>}
-
-          <div className="row">
-              {listaCuriosidades.map((item) => (
-                  <div key={item.id} className="col-md-6 col-lg-4 mb-4">
-                      <div className="card h-100 shadow-sm">
-                          <img
-                              src={item.imagenUrl}
-                              className="card-img-top"
-                              alt={item.titulo}
-                              style={{ height: '200px', objectFit: 'cover' }}
-                          />
-                          <div className="card-body">
-                              <h5 className="card-title fw-bold">{item.titulo}</h5>
-                              <p className="card-text">{item.descripcion}</p>
-                          </div>
-                      </div>
-                  </div>
-              ))}
-          </div>
+      {/* Título en NEGRO (con fondo blanco para que se lea sobre las partículas) */}
+      <div className="text-center mt-5 mb-4">
+        <div style={{ display: 'inline-block', backgroundColor: 'white', padding: '10px 30px', borderRadius: '50px' }}>
+          <h2 style={{ color: 'black', margin: 0, fontWeight: 'bold' }}>
+            Curiosidades desde el Backend
+          </h2>
+        </div>
       </div>
 
+      {error && (
+        <div className="container">
+          <div className="alert alert-danger">{error}</div>
+        </div>
+      )}
+
+      {/* --- CURIOSIDADES DEL BACKEND (Con el diseño corregido) --- */}
+      {listaCuriosidades.map((item) => (
+        <div key={item.id} className="curiosidades">
+          <h1 className="curiosidades-titulo">{item.titulo}</h1>
+
+          <div className="contenido">
+            <div className="texto-descripcion">
+              <p>{item.descripcion}</p>
+            </div>
+            <img
+              src={item.imagenUrl}
+              alt={item.titulo}
+              className="imagen-curiosidad"
+            />
+          </div>
+        </div>
+      ))}
+
+      {/* --- CURIOSIDADES ESTÁTICAS (Originales) --- */}
       <div className="curiosidades">
         <div>
-          <h1 className={"curiosidades-titulo"}>Ophiocordyceps unilateralis</h1>
+          <h1 className="curiosidades-titulo">Ophiocordyceps unilateralis</h1>
           <div className="contenido">
             <p>
               Existe un hongo llamado <strong>Ophiocordyceps unilateralis</strong> que controla la mente de las hormigas.
@@ -82,7 +87,7 @@ function CuriosidadesPage() {
       </div>
 
       <div className="curiosidades">
-        <h1 className={"curiosidades-titulo"}>Momias chinchorro</h1>
+        <h1 className="curiosidades-titulo">Momias chinchorro</h1>
         <div>
           <div className="contenido">
             <p>
@@ -96,7 +101,7 @@ function CuriosidadesPage() {
       </div>
 
       <div className="curiosidades">
-        <h1 className={"curiosidades-titulo"}>Espectros de luz</h1>
+        <h1 className="curiosidades-titulo">Espectros de luz</h1>
         <div>
           <div className="contenido">
             <p>
@@ -109,7 +114,7 @@ function CuriosidadesPage() {
       </div>
 
       <div className="curiosidades">
-        <h1 className={"curiosidades-titulo"}>Dilatación temporal</h1>
+        <h1 className="curiosidades-titulo">Dilatación temporal</h1>
         <div>
           <div className="contenido">
             <p>

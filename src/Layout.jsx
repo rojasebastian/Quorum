@@ -12,7 +12,7 @@ function Layout() {
       {/* El video de fondo también es compartido,
           así que lo ponemos en el Layout */}
       <video autoPlay muted loop id="bg-video-m">
-        <source src="/blanco-fondo.mp4" type="video/mp4" />
+        <source src="/fondo-particulas.mp4" type="video/mp4" />
       </video>
 
       {/* <Outlet> es el marcador de posición.
